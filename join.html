@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Join SMP</title>
+  <title>BONDORA SMP</title>
 
   <!-- Minecraft Font -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -33,6 +33,11 @@
       border-bottom: 6px solid #2b4a08;
     }
 
+    header img {
+      width: 90px;
+      margin-bottom: 10px;
+    }
+
     .join-card {
       background: #7fc242;
       border: 6px solid #3a5f0b;
@@ -56,7 +61,6 @@
       font-size: 10px;
     }
 
-    /* BUTTON CONTAINER */
     .btn-group {
       display: flex;
       flex-direction: column;
@@ -109,14 +113,11 @@
 
 <body>
 
-<marquee>LATEST BEDROCK VERSIONS ONLY!</marquee>
-
-<audio id="clickSound">
-  <source src="https://assets.mixkit.co/sfx/preview/mixkit-game-click-1114.mp3">
-</audio>
+<marquee>LATEST BEDROCK VERSION ONLY • NO CRACKED • JOIN DISCORD FOR RULES</marquee>
 
 <header>
-  <h1>JOIN SMP</h1>
+  <img src="logo.png" alt="Bondora SMP Logo">
+  <h1>BONDORA SMP</h1>
 </header>
 
 <div class="join-card">
@@ -131,7 +132,7 @@
     <button class="mc-btn" onclick="copyPort()">COPY PORT</button>
     <button class="mc-btn" onclick="addToMinecraft()">ADD TO MINECRAFT</button>
 
-    <a href="https://discord.gg/Uh52eGbKC4" target="_blank">
+    <a href="https://discord.gg/YOUR_INVITE_CODE" target="_blank">
       <button class="discord-btn">JOIN DISCORD</button>
     </a>
   </div>
@@ -140,19 +141,13 @@
 </div>
 
 <footer>
-  Unity & Adventure SMP
+  Unity & Adventure SMP • Owner: Trideep
 </footer>
 
-<marquee>JOIN DISCORD • FOR RULES • Communication • Server Updates • STRICKLY FOLLOW RULES! • OWNER:TrideepYo</marquee>
+<marquee>FOLLOW RULES • NO CHEATS • RESPECT PLAYERS • HAVE FUN</marquee>
 
 <script>
-  const clickSound = document.getElementById("clickSound");
   const msg = document.getElementById("msg");
-
-  function playClick() {
-    clickSound.currentTime = 0;
-    clickSound.play();
-  }
 
   function showMsg() {
     msg.style.display = "block";
@@ -160,13 +155,11 @@
   }
 
   function copyIP() {
-    playClick();
     navigator.clipboard.writeText("bondora.aternos.me");
     showMsg();
   }
 
   function copyPort() {
-    playClick();
     navigator.clipboard.writeText("38870");
     showMsg();
   }
