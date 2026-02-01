@@ -20,10 +20,12 @@ body {
     border-radius: 12px;
     width: 320px;
 }
-label {
-    margin-top: 10px;
-    display: block;
+.progress {
+    font-size: 12px;
+    margin-bottom: 10px;
+    color: #93c5fd;
 }
+label { margin-top: 10px; display: block; }
 input, select, button {
     width: 100%;
     padding: 8px;
@@ -31,18 +33,16 @@ input, select, button {
     border-radius: 6px;
     border: none;
 }
-input, select {
-    background: #1e293b;
-    color: white;
-}
+input, select { background: #1e293b; color: white; }
 button {
     background: #3b82f6;
     color: white;
     margin-top: 15px;
     cursor: pointer;
 }
-button:hover {
-    background: #2563eb;
+button:disabled {
+    background: #475569;
+    cursor: not-allowed;
 }
 </style>
 </head>
@@ -50,6 +50,8 @@ button:hover {
 <body>
 
 <form class="form-box" onsubmit="sendToDiscord(event)">
+    <div class="progress">Step 1 of 4 • Registration</div>
+
     <h2>Player Registration</h2>
 
     <label>Real Name</label>
@@ -71,14 +73,21 @@ button:hover {
     <label>Discord Profile Link</label>
     <input type="url" id="discord" required>
 
-    <button type="submit">Submit</button>
+    <button id="submitBtn" type="submit">Submit</button>
 </form>
 
 <script>
 function sendToDiscord(event) {
     event.preventDefault();
 
-    const webhookURL = "PASTE_YOUR_DISCORD_WEBHOOK_HERE";
+    const btn = document.getElementById("submitBtn");
+    btn.disabled = true;
+    btn.innerText = "Submitting...";
+
+    // SAVE PLAYER NAME
+    localStorage.setItem("playerName", gamename.value);
+
+    const webhookURL = "PASTE_YOUR_WEBHOOK_HERE";
 
     const message = {
         content:
@@ -96,7 +105,9 @@ function sendToDiscord(event) {
     }).then(() => {
         window.location.href = "success.html";
     }).catch(() => {
-        alert("Error submitting form");
+        alert("Submission failed");
+        btn.disabled = false;
+        btn.innerText = "Submit";
     });
 }
 </script>
