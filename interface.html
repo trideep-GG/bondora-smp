@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BONDORA SMP</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<style>
+body {
+    background: linear-gradient(#6bbf59, #3a7d44);
+    font-family: 'Press Start 2P', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container {
+    background: #3c8527;
+    padding: 25px;
+    border: 6px solid #1e4d1a;
+    width: 380px;
+    text-align: center;
+}
+.minecraft-btn {
+    margin-top: 15px;
+    width: 100%;
+    padding: 12px;
+    background: #7fcf5b;
+    border: 4px solid #1e4d1a;
+    cursor: pointer;
+}
+.discord-btn {
+    margin-top: 15px;
+    display: block;
+    padding: 10px;
+    background: #5865F2;
+    color: white;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <img src="logo.png" width="90">
+    <h1>BONDORA SMP</h1>
+
+    <a class="discord-btn" href="https://discord.gg/YOUR_INVITE" target="_blank">
+        Join Discord
+    </a>
+
+    <button class="minecraft-btn" onclick="goJoin()">SERVER IP</button>
+</div>
+
+<script>
+function goJoin() {
+    window.location.href = "join.html";
+}
+</script>
+
+</body>
+</html>
