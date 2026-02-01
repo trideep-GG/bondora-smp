@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Registration Complete</title>
+
+<style>
+body {
+    background: #020617;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+.box {
+    background: #0f172a;
+    padding: 30px;
+    border-radius: 14px;
+    width: 320px;
+    text-align: center;
+}
+button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #3b82f6;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>✅ Registration Successful</h2>
+    <p>Click continue to proceed.</p>
+    <button onclick="goNext()">Continue</button>
+</div>
+
+<script>
+function goNext() {
+    window.location.href = "interface.html";
+}
+</script>
+
+</body>
+</html>
