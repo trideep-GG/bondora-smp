@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>BONDORA SMP</title>
+
   <h4>PLEASE DONT ADD TO MINECRAFT BEFORE THE SERVER IS LAUNCHED ON MARCH 2026. JOIN OUR DISCORD SERVER TO STAY UPDATED!</h4>
-<h4>PORT will be visible after the server is Ready to play!</h4>
+  <h4>PORT will be visible after the server is Ready to play!</h4>
+
   <!-- Minecraft Font -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
@@ -32,11 +34,6 @@
       background: #3a5f0b;
       padding: 25px;
       border-bottom: 6px solid #2b4a08;
-    }
-
-    header img {
-      width: 90px;
-      margin-bottom: 10px;
     }
 
     .join-card {
@@ -109,6 +106,63 @@
       color: #eaffd0;
       margin-bottom: 20px;
     }
+
+    /* ===== PROFESSIONAL ERROR POPUP ===== */
+    .popup {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    .popup-box {
+      background: #ffffff;
+      color: #1f2937;
+      width: 90%;
+      max-width: 420px;
+      border-radius: 10px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    .popup-header {
+      background: #dc2626;
+      color: white;
+      padding: 14px;
+      font-size: 14px;
+      text-align: left;
+    }
+
+    .popup-content {
+      padding: 20px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .popup-actions {
+      padding: 15px;
+      text-align: right;
+      background: #f3f4f6;
+    }
+
+    .popup-actions button {
+      padding: 10px 18px;
+      background: #dc2626;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .popup-actions button:hover {
+      background: #b91c1c;
+    }
   </style>
 </head>
 
@@ -132,7 +186,7 @@
     <button class="mc-btn" onclick="copyPort()">COPY PORT</button>
     <button class="mc-btn" onclick="addToMinecraft()">ADD TO MINECRAFT</button>
 
-    <a href="https://discord.gg/YOUR_INVITE_CODE" target="_blank">
+    <a href="https://discord.gg/RpraqWxwky" target="_blank">
       <button class="discord-btn">JOIN DISCORD</button>
     </a>
   </div>
@@ -145,6 +199,20 @@
 </footer>
 
 <marquee>FOLLOW RULES • NO CHEATS • RESPECT PLAYERS • HAVE FUN</marquee>
+
+<!-- ERROR POPUP -->
+<div class="popup" id="errorPopup">
+  <div class="popup-box">
+    <div class="popup-header">Error</div>
+    <div class="popup-content">
+      Port is not ready yet.<br>
+      Please wait until the server is officially launched.
+    </div>
+    <div class="popup-actions">
+      <button onclick="closeError()">OK</button>
+    </div>
+  </div>
+</div>
 
 <script>
   const msg = document.getElementById("msg");
@@ -165,8 +233,11 @@
   }
 
   function addToMinecraft() {
-    window.location.href =
-      "minecraft://?addExternalServer=Bondora SMP|bondora.aternos.me:XXXXX";
+    document.getElementById("errorPopup").style.display = "flex";
+  }
+
+  function closeError() {
+    document.getElementById("errorPopup").style.display = "none";
   }
 </script>
 
