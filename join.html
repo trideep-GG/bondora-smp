@@ -19,32 +19,86 @@
       background: #6aa84f;
       color: white;
       text-align: center;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Minecraft Wallpaper Background */
+    .minecraft-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .minecraft-bg img {
+      position: absolute;
+      width: 90px;
+      image-rendering: pixelated;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    /* Positions */
+    .i1 { top: 5%; left: 5%; transform: rotate(-20deg); }
+    .i2 { top: 12%; left: 25%; transform: rotate(15deg); }
+    .i3 { top: 18%; left: 50%; transform: rotate(-10deg); }
+    .i4 { top: 10%; left: 75%; transform: rotate(25deg); }
+
+    .i5 { top: 30%; left: 8%; transform: rotate(10deg); }
+    .i6 { top: 35%; left: 35%; transform: rotate(-15deg); }
+    .i7 { top: 40%; left: 60%; transform: rotate(20deg); }
+    .i8 { top: 32%; left: 82%; transform: rotate(-20deg); }
+
+    .i9 { top: 58%; left: 5%; transform: rotate(15deg); }
+    .i10 { top: 65%; left: 25%; transform: rotate(-15deg); }
+    .i11 { top: 60%; left: 50%; transform: rotate(20deg); }
+    .i12 { top: 68%; left: 78%; transform: rotate(-10deg); }
+
+    .i13 { top: 82%; left: 10%; transform: rotate(25deg); }
+    .i14 { top: 85%; left: 40%; transform: rotate(-20deg); }
+    .i15 { top: 80%; left: 70%; transform: rotate(15deg); }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
     }
 
     marquee {
       background: #3a5f0b;
       padding: 8px;
       font-size: 10px;
+      position: relative;
+      z-index: 2;
     }
 
     header {
       background: #3a5f0b;
       padding: 25px;
       border-bottom: 6px solid #2b4a08;
-    }
-
-    header img {
-      width: 90px;
-      margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
     }
 
     .join-card {
-      background: #7fc242;
+      background: rgba(127, 194, 66, 0.95);
       border: 6px solid #3a5f0b;
       width: 90%;
       max-width: 520px;
       margin: 40px auto;
       padding: 30px;
+      position: relative;
+      z-index: 2;
     }
 
     .join-card h2 {
@@ -59,6 +113,22 @@
       padding: 15px;
       margin: 15px 0;
       font-size: 10px;
+    }
+
+    .warning-box {
+      background: white;
+      color: black;
+      border: 4px solid #555;
+      padding: 15px;
+      margin: 20px 0;
+      font-size: 8px;
+      line-height: 1.8;
+      text-align: left;
+    }
+
+    .warning-box span {
+      color: red;
+      font-weight: bold;
     }
 
     .btn-group {
@@ -94,6 +164,19 @@
       color: white;
       cursor: pointer;
       width: 100%;
+      transition: 0.2s;
+    }
+
+    .discord-btn:hover {
+      transform: scale(1.05);
+      background: #6a75ff;
+    }
+
+    .discord-note {
+      color: white;
+      font-size: 7px;
+      margin-top: 8px;
+      line-height: 1.5;
     }
 
     .copy-msg {
@@ -107,11 +190,37 @@
       font-size: 9px;
       color: #eaffd0;
       margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
     }
   </style>
 </head>
 
 <body>
+
+<!-- Minecraft Background -->
+<div class="minecraft-bg">
+
+  <!-- Diamond Swords -->
+  <img class="i1" src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/8/8e/Diamond_Sword_JE3_BE3.png">
+  <img class="i3" src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/8/8e/Diamond_Sword_JE3_BE3.png">
+  <img class="i5" src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/8/8e/Diamond_Sword_JE3_BE3.png">
+  <img class="i7" src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/8/8e/Diamond_Sword_JE3_BE3.png">
+  <img class="i9" src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/8/8e/Diamond_Sword_JE3_BE3.png">
+  <img class="i11" src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/8/8e/Diamond_Sword_JE3_BE3.png">
+  <img class="i13" src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/8/8e/Diamond_Sword_JE3_BE3.png">
+  <img class="i15" src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/8/8e/Diamond_Sword_JE3_BE3.png">
+
+  <!-- Diamond Pickaxes -->
+  <img class="i2" src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/d/d1/Diamond_Pickaxe_JE3_BE3.png">
+  <img class="i4" src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/d/d1/Diamond_Pickaxe_JE3_BE3.png">
+  <img class="i6" src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/d/d1/Diamond_Pickaxe_JE3_BE3.png">
+  <img class="i8" src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/d/d1/Diamond_Pickaxe_JE3_BE3.png">
+  <img class="i10" src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/d/d1/Diamond_Pickaxe_JE3_BE3.png">
+  <img class="i12" src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/d/d1/Diamond_Pickaxe_JE3_BE3.png">
+  <img class="i14" src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/d/d1/Diamond_Pickaxe_JE3_BE3.png">
+
+</div>
 
 <marquee>LATEST BEDROCK VERSION ONLY • NO CRACKED • JOIN DISCORD FOR RULES</marquee>
 
@@ -126,14 +235,26 @@
   <div class="info">PORT: 22826</div>
   <div class="info">EDITION: Bedrock Only</div>
 
+  <div class="warning-box">
+    <span>Warning:</span><br><br>
+    Player trying to play by their own, destroying everything or destroying places,
+    stealing items from other players, killing or trapping others for self satisfaction,
+    killing other players' animals or pets, or simply annoying other players
+    will get permanent ban from the server.
+  </div>
+
   <div class="btn-group">
     <button class="mc-btn" onclick="copyIP()">COPY IP</button>
     <button class="mc-btn" onclick="copyPort()">COPY PORT</button>
     <button class="mc-btn" onclick="addToMinecraft()">ADD TO MINECRAFT</button>
 
     <a href="https://discord.gg/RpraqWxwky" target="_blank">
-      <button class="discord-btn">JOIN DISCORD</button>
+      <button class="discord-btn" onclick="playExpSound()">JOIN DISCORD</button>
     </a>
+
+    <div class="discord-note">
+      Join Discord for Chat, Rules and Announcements
+    </div>
   </div>
 
   <p class="copy-msg" id="msg">✔ Copied to clipboard!</p>
@@ -145,8 +266,29 @@
 
 <marquee>FOLLOW RULES • NO CHEATS • RESPECT PLAYERS • HAVE FUN</marquee>
 
+<!-- Minecraft Sounds -->
+<audio id="clickSound" src="https://www.myinstants.com/media/sounds/minecraft_click.mp3"></audio>
+
+<audio id="expSound" src="https://www.myinstants.com/media/sounds/minecraft-levelup.mp3"></audio>
+
 <script>
   const msg = document.getElementById("msg");
+
+  const clickSound = document.getElementById("clickSound");
+  const expSound = document.getElementById("expSound");
+
+  // Play click sound on all buttons
+  document.querySelectorAll("button").forEach(button => {
+    button.addEventListener("click", () => {
+      clickSound.currentTime = 0;
+      clickSound.play();
+    });
+  });
+
+  function playExpSound() {
+    expSound.currentTime = 0;
+    expSound.play();
+  }
 
   function showMsg() {
     msg.style.display = "block";
